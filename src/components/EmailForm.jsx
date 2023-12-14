@@ -17,7 +17,7 @@ const [error,setError] = useState("")
     e.preventDefault();
 
     const templateParams = {
-      from_name: email,
+      from_name: name,
       from_email: email,
       to_name:name,
       message: message,
