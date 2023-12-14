@@ -1,7 +1,10 @@
 import emailJs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 export default function EmailForm() {
+    const navigate = useNavigate()
+
   const form = useRef();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -36,10 +39,16 @@ const [error,setError] = useState("")
       });
   };
 
+  const handleRedirect=()=>{
+    if(status){
+        return navigate("/thankyou")
+    }
+    return null
+  }
+
   return (
     <>
-      <h1>Contact Us</h1>
-      {status && <h3>Thank you for contacting us !</h3>}
+      {handleRedirect()}
       <form onSubmit={handleSubmit} ref={form} className="emailForm">
         <input
           type="text"
