@@ -21,7 +21,7 @@ cd my-email-app
 ### 2. Install EmailJS Package
 
 ```bash
-npm install emailjs-com
+npm install @emailjs/browser"
 ```
 
 ### 3. Set Up Email.Js Account
